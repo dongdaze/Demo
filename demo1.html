@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+<style>
+	body{
+		background: #000;
+	}
+	#canvas{
+		margin:5px auto;
+		border:1px solid #000;
+		display:block;
+	}
+	#scale-range{
+		width:800px;
+		margin:5px auto;
+		display: block;
+	}
+</style>
+</head>
+<body>
+	<canvas id="canvas" ></canvas>
+	<input type="range" id="scale-range" min="0.5" max="2.0" step="0.01" value="1"/>
+</body>
+<script>
+	var canvas=document.getElementById('canvas');
+	var context=canvas.getContext("2d");
+	var slider=document.getElementById('scale-range');
+	var image=new Image();
+
+	window.onload=function(){
+		canvas.width=1152;
+		canvas.height=618;
+
+		image.src="img.jpg";
+		var scale=slider.value;
+
+		image.onload=function(){
+			drawImageByScale(scale);
+
+			slider.onmousemove=function(){
+				scale=slider.value;
+				drawImageByScale(scale);			
+			}
+
+		}
+
+		function drawImageByScale(scale){
+			var imageWidth=1152*scale;
+			var imageHeight=618*scale;
+
+			var dx=canvas.width/2-imageWidth/2;
+			var dy=canvas.height/2-imageHeight/2;
+			context.clearRect(0,0,canvas.width,canvas.height);
+			context.drawImage(image,dx,dy,imageWidth,imageHeight);
+		}
+
+
+	}
+
+</script>
+</html>
