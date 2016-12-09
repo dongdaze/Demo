@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">   
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        body{padding-top:50px;}
+        .carousel{
+          width:90%;
+          margin:0 auto;
+          overflow: hidden;
+          background-color: #000；
+        }
+        .item img{
+          width:100%;
+        }
+        .container-fluid{
+          width:90%;
+          margin:40px auto;
+          text-align:center;
+        }
+        .col-md-3{
+          margin-bottom:20px;
+          font-family:"Microsoft YaHei";
+        }
+        .col-md-3 p{
+          margin-top:20px;
+        }
+        .swrap{
+          width:80%;
+          margin:0 auto;
+        }
+        .swrap .container{
+          padding:50px 0 50px 30px;
+          font-family:"Microsoft YaHei";
+        }
+        .tab-content .container .row p{
+          font-size:16px;
+          line-height:30px;
+          text-indent: 2em;
+        }
+        .tab-content .container .row img{
+            width:200px;
+            height: 200px;
+            float:right;
+          }
+        .footer{
+            background: #333;
+          }
+        .footer li{
+          list-style: none;
+          color:#fff;
+          font-family:"Microsoft YaHei";
+          padding:5px;
+        }
+        .footer ul{
+          display:inline-block;
+          margin-left:25%;
+          margin-top:20px;
+        }
+    </style>
+  </head>
+  <body>
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container"> <!-- 导航栏 -->
+
+    <div class="navbar-header">  <!-- 顶部固定写法 -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand " href="#">首页</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="collapse1">
+      <ul class="nav navbar-nav">      
+        <li class="dropdown">
+          <a href="##" class="dropdown-toggle" data-toggle="dropdown">手机应用 
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#chrome">Chrome</a></li>
+            <li><a href="#weixin">微信</a></li>
+            <li><a href="#camera">美颜相机</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:void(0);">其他</a></li>
+          </ul>
+
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">游戏市场 
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#game">愤怒的小鸟</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:void(0);">其他</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="请输入...">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+
+    </div>
+  </div>
+</nav>
+
+<!-- 轮播图 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="./img/5.jpg" >
+    </div>
+
+    <div class="item">
+      <img src="./img/6.jpg" >
+    </div>
+    
+    <div class="item">
+      <img src="./img/7.jpg" >
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">前一页</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">后一页</span>
+  </a>
+
+</div>
+
+<!-- 栅格布局 -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="./img/8.jpg" >
+      <p>chrome浏览器</p>
+      <button class="btn btn-info btn-sm">下载</button>
+    </div>
+    <div class="col-md-3">
+      <img src="./img/9.jpg" >
+      <p>微信</p>
+      <button class="btn btn-success btn-sm">下载</button>
+    </div>
+    <div class="col-md-3">
+      <img src="./img/10.jpg" >
+      <p>美颜相机</p>
+      <button class="btn btn-warning btn-sm">下载</button>
+    </div>
+    <div class="col-md-3">
+      <img src="./img/11.jpg" >
+        <p>愤怒的小鸟</p>
+        <button class="btn btn-danger btn-sm">下载</button>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<!-- 标签页 -->
+<!-- Nav tabs -->
+<div class="swrap">
+<ul class="nav nav-pills" role="tablist" id="tab-list">
+  <li role="presentation" class="active"><a href="#chrome" role="tab" data-toggle="tab">chrome</a></li>
+  <li role="presentation"><a href="#weixin" role="tab" data-toggle="tab">微信</a></li>
+  <li role="presentation"><a href="#camera" role="tab" data-toggle="tab">相机</a></li>
+  <li role="presentation"><a href="#game" role="tab" data-toggle="tab">愤怒的小鸟</a></li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="chrome">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+          <h3>chrome浏览器</h3>    
+          <p>Google Chrome，是一个由Google公司开发的网页浏览器。该浏览器是基于其他开源软件所撰写，包括WebKit，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。软件的名称是来自于称作Chrome的网络浏览器GUI（图形使用者界面）。软件的beta测试版本在2008年9月2日发布，提供50种语言版本，有Windows、OS X、Linux、Android、以及iOS版本提供下载</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./img/8.jpg" >
+        </div>
+      </div>
+
+      </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="weixin">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-8">
+          <h3>微信</h3>    
+          <p>微信 (WeChat)[1]  是腾讯公司于2011年1月21日推出的一个为智能终端提供即时通讯服务的免费应用程序[1]  ，由张小龙所带领的腾讯广州研发中心产品团队打造 [2]  。微信支持跨通信运营商、跨操作系统平台通过网络快速发送免费（需消耗少量网络流量）语音短信、视频、图片和文字，同时，也可以使用通过共享流媒体内容的资料和基于位置的社交插件“摇一摇”、“漂流瓶”、“朋友圈”、”公众平台“、”语音记事本“等服务插件。</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./img/9.jpg" >
+        </div>
+      </div>
+
+      </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="camera">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+          <h3>美颜相机</h3>
+          <p>美颜相机是一款把手机变自拍神器的APP，由美图秀秀团队倾力打造，专为爱自拍的女生量身定制。自动美肌和智能美型，颠覆传统拍照效果，瞬间自动美颜，完美保留脸部细节，让照片告别模糊。</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./img/10.jpg" >
+        </div>
+      </div>
+
+      </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="game">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+          <h3>愤怒的小鸟</h3>    
+          <p>《愤怒的小鸟太空版》独特的物理特质,增加了重力圈的概念，“第一宇宙速度”“重力参数”等物理概念也引入游戏，新版本中小鸟们将一改往日的飞行路线，在无重力的太空中直线飞行，一旦冲入小行星的“重力圈”，便会受引力的影响而变化轨道。玩家需掌握和老版游戏截然不同的新玩法，调整新的角度和力度来适应宇宙中无重力的状态，同时，导向射击式的激光鸟和区域结冰的冰鸟等新角色也再次扩充了小鸟的队伍，本次新版本的发布相信会让玩家耳目一新。</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./img/11.jpg" >
+        </div>
+      </div>
+
+      </div>
+  </div>
+</div>
+<hr>
+</div>
+  
+  <div class="footer">
+    <ul>
+      <li>关于我们</li>
+      <li>广告合作</li>
+      <li>友情链接</li>
+    </ul>
+
+    <ul>
+      <li>新浪微博</li>
+      <li>电子邮件</li>
+      <li>常见问题</li>
+    </ul>
+  </div>
+  <script>
+  $(function(){
+    $("#collapse1 .dropdown-menu a").click(function(){
+      var href=$(this).attr("href");
+      $("#tab-list a[href='"+href+"']").tab("show");
+    });
+  });
+  </script>
+  </body>
+</html>
